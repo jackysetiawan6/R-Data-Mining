@@ -7,4 +7,3 @@ course <- scoreWeight[scoreWeight$Course.Code %in% score$Course.Code, ]
 
 # CREATE MATRICES
 matrixA <- course[, -1]
-
