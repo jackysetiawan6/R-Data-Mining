@@ -1,6 +1,6 @@
 # IMPORT CSV FILE
-score <- read.csv("Score.csv", fileEncoding = "UTF-8")
-scoreWeight <- read.csv("ScoreWeight.csv", fileEncoding = "UTF-8")
+score <- read.csv("Score.csv", fileEncoding = "UTF-8-BOM")
+scoreWeight <- read.csv("ScoreWeight.csv", fileEncoding = "UTF-8-BOM")
 
 # SELECT SPECIFIC ROWS
 courseWeight <- scoreWeight[scoreWeight$Course.Code %in% score$Course.Code, ]
@@ -34,8 +34,8 @@ score$Grade <- grade$Grade
 
 # WRITE MODIFIED DATA INTO CSV FILE
 file_name = "Result.csv"
-write.csv(score, file = file_name, row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(score, file = file_name, row.names = FALSE, fileEncoding = "UTF-8-BOM")
 
 # PRINT AND CHECK THE RESULT
-result = read.csv(file_name, fileEncoding = "UTF-8")
+result = read.csv(file_name, fileEncoding = "UTF-8-BOM")
 print(result)
